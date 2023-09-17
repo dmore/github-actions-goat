@@ -6,11 +6,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: step-security/harden-runner@v2
+      #added harden runner disabling sudo with block egress and allowing 4 endpoints as rec.
+      - name: Harden Runner
+        uses: step-security/harden-runner@8ca2b8b2ece13480cda6dacd3511b49857a23c09 # v2.5.1
         with:
-          egress-policy: audit
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            ghcr.io:443
+            github.com:443
+            registry.npmjs.org:443
+            www.stepsecurity.io:443
+
+      #- uses: step-security/harden-runner@v2
+      #  with:
+      #    egress-policy: audit
+
       - uses: actions/checkout@v3
+      
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
