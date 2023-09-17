@@ -19,10 +19,10 @@ jobs:
             github.com:443
             registry.npmjs.org:443
             www.stepsecurity.io:443
-      #audit too to see report
-      - uses: step-security/harden-runner@v2
-        with:
-          egress-policy: audit
+      
+      #- uses: step-security/harden-runner@v2
+      #  with:
+      #    egress-policy: audit
 
       - uses: actions/checkout@v3
 
