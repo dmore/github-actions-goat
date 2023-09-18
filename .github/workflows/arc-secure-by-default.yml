@@ -6,7 +6,7 @@ jobs:
   direct-ip-hosted:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # Codecov Scenario: Exfiltrate data to attacker's IP address
       - name: Data Exfiltration To Attacker Controlled IP address
@@ -14,7 +14,7 @@ jobs:
   direct-ip-arc:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # Codecov Scenario: Exfiltrate data to attacker's IP address
       - name: Data Exfiltration To Attacker Controlled IP address
